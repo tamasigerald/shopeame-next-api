@@ -32,13 +32,13 @@ export async function postProduct(req, res) {
 export async function updateProduct(req, res, id) {
     try {
         const item = req.body;
-        const updatedItem = await Product.findOneAndUpdate({id: id}, item)
-            if (!updatedItem) {
-                return res.status(400).json({ success: false })
-            }
-            res.status(200).json({ success: true, result: item })
+        const updatedItem = await Product.findOneAndUpdate({id: id}, item);
+        if (!updatedItem) {
+            return res.status(400).json({ success: false })
+        }
+        res.status(200).json({ success: true, result: item })
     } catch (error) {
-        
+        res.status(400).json({ success: false });
     }
 }
 
