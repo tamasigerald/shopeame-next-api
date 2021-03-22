@@ -29,11 +29,6 @@ export default async function products (req: NextApiRequest, res: NextApiRespons
 
   await connectDB();
   await enableCors(req, res, cors);
-  // await NextCors(req, res, {
-  //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  //   origin: '*',
-  //   allowedHeaders: ''
-  // })
   
   switch(method) {
     case 'GET':
